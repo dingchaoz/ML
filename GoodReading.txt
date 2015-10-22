@@ -35,3 +35,4 @@ https://www.youtube.com/watch?v=9kNkpQTwPc0 Contour Plot
 https://www.youtube.com/watch?v=KDw3hC2YNFc Covariance and correlation
 https://www.youtube.com/watch?v=1aQvRNK-JZQ BIRCH Clustering
 https://www.youtube.com/watch?v=X17KHYnIC7o DBSCAN Clustering
+https://www.youtube.com/watch?v=p17C9q2M00Q Decision Trees
