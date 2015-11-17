@@ -37,4 +37,4 @@ https://www.youtube.com/watch?v=1aQvRNK-JZQ BIRCH Clustering
 https://www.youtube.com/watch?v=X17KHYnIC7o DBSCAN Clustering
 https://www.youtube.com/watch?v=p17C9q2M00Q Decision Trees
 http://stats.stackexchange.com/questions/14002/whats-the-difference-between-principal-components-analysis-and-multidimensional/132731#132731 Difference Between PCA and MDS 
-https://www.youtube.com/watch?v=1NxnPkZM9bc Support Vector Machine 
+https://www.youtube.com/watch?v=1NxnPkZM9bc Support Vector Machine   
