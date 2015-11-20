@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=X9_ISJ0YpGw  Normal Q-Q plot
 https://www.youtube.com/watch?v=hcDb12fsbBU Chi-Square Distribution
 https://onlinecourses.science.psu.edu/stat857/node/137 Regression Shrinkage Methods: Ridge, Lasso
 https://www.youtube.com/watch?v=qSzupSLeMys Ridge Regression
-https://www.youtube.com/watch?v=tqB3IAqejoQ Lasso Regression
+https://www.youtube.com/watch?v=tqB3IAqejoQ Lasso Regression  
 https://www.youtube.com/watch?v=Tn5y2i_MqQ8 Likelihood ratio test 
 https://www.youtube.com/watch?v=YkD7ydzp9_E Akaike Information Criterion
 https://www.youtube.com/watch?v=tmDHl5PMKoo Bayesian Information Criterion
