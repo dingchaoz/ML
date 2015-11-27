@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=tqB3IAqejoQ Lasso Regression
 https://www.youtube.com/watch?v=Tn5y2i_MqQ8 Likelihood ratio test 
 https://www.youtube.com/watch?v=YkD7ydzp9_E Akaike Information Criterion
 https://www.youtube.com/watch?v=tmDHl5PMKoo Bayesian Information Criterion
-https://www.khanacademy.org/math/linear-algebra/alternate_bases/eigen_everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors EigenVector
+https://www.khanacademy.org/math/linear-algebra/alternate_bases/eigen_everything/v/linear-algebra-introduction-to-eigenvalues-and-eigenvectors EigenVector 
 https://www.youtube.com/watch?v=f9mZ8dSrVJA Principal Component Analysis
 https://www.youtube.com/watch?v=WKEGhyFx0Dg Partial Least Squares
 https://www.youtube.com/watch?v=k_7gMp5wh5A&list=PLBv09BD7ez_68OwSB97WXyIOvvI5nqi-3 K nearest neigbor
