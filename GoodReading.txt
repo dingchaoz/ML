@@ -40,3 +40,7 @@ http://stats.stackexchange.com/questions/14002/whats-the-difference-between-prin
 https://www.youtube.com/watch?v=1NxnPkZM9bc Support Vector Machine    
 https://www.youtube.com/watch?v=YIROy2XFjQkd B-tree 
 https://www.youtube.com/watch?v=x6At0nzX92o Binary Tree B-tree part0
+https://www.youtube.com/watch?v=zAULhNrnuL4 Logistic Regression 
+https://www.youtube.com/watch?v=Rj3pVkjAwY0 Odds,Odds Ratio
+https://www.youtube.com/watch?v=NmjT1_nClzg Logit, Bernoulli 
+https://www.youtube.com/watch?v=HwQQXs4Nyjo Support Vector Machines
