@@ -47,3 +47,6 @@ https://www.youtube.com/watch?v=HwQQXs4Nyjo Support Vector Machines
 https://www.youtube.com/watch?v=zvUOpbgtW3c&list=PLD0F06AA0D2E8FFBA&index=8 Regression Tree
 https://www.youtube.com/watch?v=UMtBWQ2m04g&list=PLD0F06AA0D2E8FFBA&index=11 Generationlization of Tree: impurity,entropy,gini index
 https://www.youtube.com/watch?v=Ih4R42qPRWo&index=20&list=PLD0F06AA0D2E8FFBA Big picture
+https://www.youtube.com/watch?v=0LQmZXCWMFI&index=34&list=PLD0F06AA0D2E8FFBA Bayesian Inference
+https://www.youtube.com/watch?v=zXNB2vzKKIQ&list=PLD0F06AA0D2E8FFBA&index=37 Conjugate Prior
+https://www.youtube.com/watch?v=SD-b50m1Zqo&index=44&list=PLD0F06AA0D2E8FFBA Posterior Distributino for Gaussian
