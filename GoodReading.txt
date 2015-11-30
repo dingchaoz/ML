@@ -44,3 +44,6 @@ https://www.youtube.com/watch?v=zAULhNrnuL4 Logistic Regression
 https://www.youtube.com/watch?v=Rj3pVkjAwY0 Odds,Odds Ratio
 https://www.youtube.com/watch?v=NmjT1_nClzg Logit, Bernoulli 
 https://www.youtube.com/watch?v=HwQQXs4Nyjo Support Vector Machines
+https://www.youtube.com/watch?v=zvUOpbgtW3c&list=PLD0F06AA0D2E8FFBA&index=8 Regression Tree
+https://www.youtube.com/watch?v=UMtBWQ2m04g&list=PLD0F06AA0D2E8FFBA&index=11 Generationlization of Tree: impurity,entropy,gini index
+https://www.youtube.com/watch?v=Ih4R42qPRWo&index=20&list=PLD0F06AA0D2E8FFBA Big picture
