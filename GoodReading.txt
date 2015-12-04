@@ -50,3 +50,8 @@ https://www.youtube.com/watch?v=Ih4R42qPRWo&index=20&list=PLD0F06AA0D2E8FFBA Big
 https://www.youtube.com/watch?v=0LQmZXCWMFI&index=34&list=PLD0F06AA0D2E8FFBA Bayesian Inference
 https://www.youtube.com/watch?v=zXNB2vzKKIQ&list=PLD0F06AA0D2E8FFBA&index=37 Conjugate Prior
 https://www.youtube.com/watch?v=SD-b50m1Zqo&index=44&list=PLD0F06AA0D2E8FFBA Posterior Distributino for Gaussian
+https://www.youtube.com/watch?v=8yvBqhm92xA&index=46&list=PLD0F06AA0D2E8FFBA Naive Bayes Classifier
+https://www.youtube.com/watch?v=hAnfnc2dWBs&index=19&list=PLaXDtXvwY-oDvedS3f4HW0b4KxqpJ_imw Linear Classifier
+https://www.youtube.com/watch?v=U2A-g6-Prrs&index=18&list=PLaXDtXvwY-oDvedS3f4HW0b4KxqpJ_imw Decision Tree
+https://www.youtube.com/watch?v=sRktKszFmSk&list=PLaXDtXvwY-oDvedS3f4HW0b4KxqpJ_imw&index=29 Gradient Boosting
+https://www.youtube.com/watch?v=moqPyJQHR_s LDA
