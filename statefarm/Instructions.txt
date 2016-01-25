@@ -1,0 +1,14 @@
+﻿Step 0:
+A few words of caution: 1) Read all the way through the instructions. 2) Code must be submitted in Python and write-ups in a PDF. 3) No additional data may be added or used. 4) Not all data must be used to build an adequate model, but making use of complex variables will help us identify high-performance candidates. That being said, candidates will lose points if they use complex variables at the expense of model performance; balance is key.
+
+Step 1:
+Clean and prepare your data: There are several entries where values have been deleted to simulate dirty data. Please clean the data with whatever method(s) you believe is best/most suitable. Note that some of the missing values are truly blank (unknown answers) and thus may be impossible to clean; use your discretion.
+
+Step 2:
+Build your models: Please build two distinctly different machine learning/statistical models in Python to predict the interest rate assigned to a loan. When writing the code associated with each model, please have the first part produce and save the model, followed by a second part that loads and applies the model.
+
+Step 3:
+Test your models using the data found within the "Holdout for Testing" file. Save the results of the two models in a single, separate CSV titled "Results from" *instert your name* (yes, yes, you are so witty and funny and we would have never expected you to save the file with "*insert your name*" in the actual file name; now please actually use your name).
+
+Step 4:
+Submit your work: Please submit all of your code for cleaning, prepping, and modeling your data, your "Results" file, a brief write-up comparing the pros and cons of the two modeling techniques you used, and your solutions to the broken code segment. You dod not need to submit the original data back to us. Your work will be scored on techniques used (appropriateness and complexity), model performanance - measured by RMSE - on the data hold out, an understanding of the two techniques you compared in your write-up, and your overall code.
