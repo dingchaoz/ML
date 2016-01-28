@@ -1,7 +1,20 @@
 
 # coding: utf-8
 
-# In[1]:
+# ##StateFarm Interest Rate Prediction-- Dingchao Zhang
+# ###Summary
+# 1. Two distinctive methods, one emsemble method: Gradient Boosting Regressor and one multi-variate linear regression method: Lasso Regularized Ordinary Linear Regression were selected to train and predict interest rate
+# 2. Each Model building is executed in the following procedures: 
+# <br /> 
+#  Data Pre-processing/ Feature engineering: Cleaning, outliers examination and removal, predictors selection, datatype transformation, multi-collinearity removal, centering and scaling( if needed, e.g. Linear Regression Model)
+# <br />  
+#  Model Parameter tuning: cross validation and grid search is used to find the best parameter set that minimized RMSE
+# <br />  
+#  Model Evaluation and comparison: bootstrap sampling is used since it produces the smaller variance in model evaluation, and AIC/BIC is used to choose between Lasso and Ridge regression
+# 3. Gradient Boosting does not needproduces lower RMSE than Lasso Regularized OLR, but slower to train
+# 4. More discussions about pros and cons about the two models can be seen in the summary.pdf.
+
+# In[ ]:
 
 import matplotlib.pyplot as plt
 get_ipython().magic('matplotlib inline')
@@ -17,7 +30,7 @@ from sklearn import datasets, svm
 from sklearn.svm import SVR
 
 #data = pd.read_csv('data', parse_dates=[[0,1]], infer_datetime_format=True)
-df = pd.read_csv("training.csv", infer_datetime_format=True,low_memory=False)
+df = pd.read_csv("Data for Cleaning & Modeling.csv", infer_datetime_format=True,low_memory=False)
 
 columnNames = ['int_rate','id_loan','id_borrower','loan_amt','funded_amt','funded_amt_inv',
               'term','grade','subgrade','emp_title','emp_length','home_ownership','annual_inc',
@@ -113,6 +126,7 @@ cor = cor.stack()
 cor[(cor > 0.55) | (cor < -0.55)]
 
 df.drop(['mths_since_last_deliq'], axis=1, inplace=True)
+
 
 
 # ## STEP 1 Predictors Filtering and Pre-Processing
@@ -1022,6 +1036,134 @@ plt.title('Variable Importance')
 plt.show()
 
 
+# ## Gradient Boosting Regressor vs Lasso OLR Perforamnce Comparison
+
+# In[163]:
+
+# Create an acceptable formula for our machine learning algorithms
+formula_ml = 'int_rate ~ loan_amt '
+for i in range(2,len(df.columns)):
+    
+    if str(df.dtypes[i]) == 'object': 
+        formula_ml = formula_ml + ' + ' + 'C(' + df.columns[i] + ')'
+    elif (str(df.dtypes[i]) == 'float64') | (str(df.dtypes[i]) == 'float32'):
+        formula_ml = formula_ml + ' + ' + df.columns[i]
+        
+# import the machine learning library that holds the randomforest
+import sklearn.ensemble as ske
+
+# Create the random forest model and fit the model to our training data
+y1, x1 = dmatrices(formula_ml, data=df, return_type='dataframe')
+y1 = np.asarray(y1).ravel()
+
+
+## Split data for testing and training
+offset = int(x1.shape[0] * 0.75)
+X_train1, y_train1 = x1[:offset], y1[:offset]
+X_test1, y_test1 = x1[offset:], y1[offset:]
+
+X_train = X_train[:19887]
+
+offset = [100,1000,2500,5000,8000,10000,15000,19877]
+
+
+GSD_train = []
+GSD_predict = []
+OLR_train = []
+OLR_predict = []
+for i in offset:
+    X_l = X_train[:i]
+    y_l = y_train[:i]
+    X_g = X_train1[:i]
+    y_g = y_train1[:i]
+    
+    t1 = time.time()
+    clf.fit(X_g, y_g)
+    t_bic = time.time() - t1
+    GSD_predict.append(t_bic)
+    print(t_bic)
+    
+    t1 = time.time()
+    clf.predict(X_g)
+    t_bic = time.time() - t1
+    GSD_train.append(t_bic)
+    print(t_bic)
+
+    t1 = time.time()
+    lasso.fit(X_l, y_l)
+    t_bic = time.time() - t1
+    OLR_train.append(t_bic)
+    print(t_bic)
+    
+    t1 = time.time()
+    lasso.predict(X_l)
+    t_bic = time.time() - t1
+    OLR_predict.append(t_bic)
+    print(t_bic)
+    
+GSD_predict = np.array(GSD_predict)
+GSD_train = np.array(GSD_train)
+OLR_predict = np.array(OLR_predict)
+OLR_train = np.array(OLR_train)
+
+   
+    
+
+offset = [100,1000,2500,5000,8000,10000,15000,19877]
+
+GSD_rmse = []
+
+OLR_rmse = []
+for i in offset:
+    X_l = X_train[:i]
+    y_l = y_train[:i]
+    X_g = X_train1[:i]
+    y_g = y_train1[:i]
+    
+    clf.fit(X_g, y_g)
+    rmse = mean_squared_error(y_test1, clf.predict(X_test1))**0.5
+    GSD_rmse.append(rmse)
+    print(rmse)
+
+    lasso.fit(X_l, y_l)
+    rmse2 = mean_squared_error(y_test, lasso.predict(X_test))**0.5
+    OLR_rmse.append(rmse2)
+    print(rmse2)
+
+
+# ### Plot the comparisons
+
+# In[203]:
+
+plt.figure(figsize=(20, 6))
+plt.subplot(1, 2, 1)
+plt.title('RMSE Reduction by Training data size')
+plt.plot(offset, GSD_rmse, 'b-',
+         label='Gradient Boosting Regressor')
+plt.plot(offset, OLR_rmse, 'r-',
+         label='Lasso OLR')
+plt.legend(loc='upper right')
+plt.xlabel('Training sample size')
+plt.ylabel('RMSE')
+
+###############################################################################
+
+plt.subplot(1, 2, 2)
+plt.title('Prediction and Training Time complexity')
+plt.plot(offset, GSD_train, 'b-',
+         label='Gradient Boosting Regressor Training')
+plt.plot(offset, GSD_predict, 'r-',
+         label='Gradient Boosting Regressor Predicting')
+plt.plot(offset, OLR_train, 'bo',
+         label='Lasso OLR Training')
+plt.plot(offset, OLR_predict, 'ro',
+         label='Lasso OLR Predicting')
+plt.legend(loc='upper right')
+plt.xlabel('Data size')
+plt.ylabel('Time(seconds)')
+plt.show()
+
+
 # ## STEP 3 Test Modesl with hold out for testing files
 
 # ### Read the testing data into data frame
@@ -1029,7 +1171,7 @@ plt.show()
 # In[138]:
 
 # Read the training.csv into data frame df
-td = pd.read_csv("testing.csv", infer_datetime_format=True,low_memory=False)
+td = pd.read_csv("Holdout for Testing.csv", infer_datetime_format=True,low_memory=False)
 
 # Name the data frame with the columnNames
 td.columns = columnNames
